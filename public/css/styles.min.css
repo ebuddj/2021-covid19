@@ -1,0 +1,56 @@
+.app___2khK2 .chart_containers___30YKP {
+  display: block;
+  text-align: center;
+}
+.app___2khK2 .chart_containers___30YKP svg {
+  overflow: visible;
+}
+.app___2khK2 .chart_containers___30YKP svg .title___2r2fk {
+  font-family: Lato;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 8pt;
+}
+.app___2khK2 .chart_containers___30YKP svg .area___33rJN {
+  fill: #f00;
+  stroke-width: 0;
+}
+.app___2khK2 .chart_containers___30YKP svg .yaxis___2Krk0 path {
+  stroke: #ccc;
+}
+.app___2khK2 .chart_containers___30YKP svg .yaxis___2Krk0 text {
+  font-family: Lato;
+  font-weight: 300;
+  font-size: 7pt;
+}
+/* General styles */
+.clearfix___1yHqr {
+  zoom: 1;
+}
+.clearfix___1yHqr:after {
+  clear: both;
+  content: ' ';
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+.ss-terms___dMEZ6 {
+  margin: 40px auto auto auto;
+  max-width: 450px;
+}
+.meta___3gcNx {
+  color: #333;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 0 10px 40px 10px;
+}
+.clear_both___a0DL_ {
+  clear: both;
+}
+.hidden___1aMNf {
+  display: none;
+}
+.nowrap___2n1o8 {
+  white-space: nowrap;
+}
+
