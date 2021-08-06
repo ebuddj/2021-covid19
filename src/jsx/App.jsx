@@ -166,7 +166,7 @@ class App extends Component {
       .attr('marker-end', 'url(#arrow)')
       .attr('fill', 'none');
     g.append('path')
-      .attr('d', d3.line()([[x(230), y(-400)], [x(430), y(-500)]]))
+      .attr('d', d3.line()([[x(200), y(-400)], [x(430), y(-500)]]))
       .attr('stroke', 'black')
       .attr('marker-end', 'url(#arrow)')
       .attr('fill', 'none');
@@ -177,7 +177,7 @@ class App extends Component {
       .attr('text-anchor', 'start')
       .text('Daily cases');
     g.append('text')
-      .attr('transform', 'translate(' + (x(230)) + ',' + (y(-350)) + ')rotate(' + rotate + ')')
+      .attr('transform', 'translate(' + (x(200)) + ',' + (y(-350)) + ')rotate(' + rotate + ')')
       .attr('class', style.legend_text)
       .attr('text-anchor', 'start')
       .text('Fully vaccinated');
