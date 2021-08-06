@@ -2,10 +2,10 @@
 
 **Live demo** https://ebuddj.github.io/2021-covid19/
 
-## Project title
+## Cases versus vaccinations (EBU)
 
 **Sources**
-* []()
+* [Our World In Data](https://ourworldindata.org/covid-vaccinations)
 
 **EBU links**
 * []()
