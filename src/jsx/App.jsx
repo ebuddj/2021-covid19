@@ -63,6 +63,7 @@ class App extends Component {
 
     x.domain(d3.extent(data.date, (d, i) => i));
     y.domain([0, d3.max(data.new_cases_smoothed, d => d)]);
+
     let area = d3.area()
       .x((d, i) => x(i))
       .y0(y(0))
@@ -97,6 +98,9 @@ class App extends Component {
         .ticks(3)
         .tickSizeInner(3)
         .tickSizeOuter(0));
+    if (i === 0) {
+      this.createLegend(g, y, x);
+    }
   }
   drawVaccinesChart(data, svg, i) {
     let g = svg.append('g')
@@ -108,7 +112,7 @@ class App extends Component {
     let area = d3.area()
       .x((d, i) => x(i))
       .y0(y(0))
-      .y1(d => -y(d))
+      .y1(d => -y(d));
     svg.append('linearGradient')
       .attr('id', 'area-vaccines-' + i)
       .attr('gradientUnits', 'userSpaceOnUse')
@@ -140,7 +144,42 @@ class App extends Component {
         .tickSizeInner(3)
         .tickFormat(i => Math.abs(i))
         .tickSizeOuter(0));
+  }
+  createLegend(g, y, x) {
+    g.append('defs')
+      .append('marker')
+      .attr('id', 'arrow')
+      // .attr('viewBox', [0, 0, markerBoxWidth, markerBoxHeight])
+      .attr('refX', 6)
+      .attr('refY', 6)
+      .attr('markerWidth', 30)
+      .attr('markerHeight', 30)
+      .attr('markerUnits','userSpaceOnUse')
+      .attr('orient', 'auto')
+      .append('path')
+      .attr('d', 'M 0 0 12 6 0 12 3 6')
+      .attr('stroke', 'black');
+    g.append('path')
+      .attr('d', d3.line()([[x(50), y(400)], [x(240), y(500)]]))
+      .attr('stroke', 'black')
+      .attr('marker-end', 'url(#arrow)')
+      .attr('fill', 'none');
+    g.append('path')
+      .attr('d', d3.line()([[x(230), y(-400)], [x(430), y(-500)]]))
+      .attr('stroke', 'black')
+      .attr('marker-end', 'url(#arrow)')
+      .attr('fill', 'none');
 
+     g.append('text')
+      .attr('transform', 'translate(' + (x(50)) + ',' + (y(450)) + ')rotate(-6)')
+      .attr('class', style.legend_text)
+      .attr('text-anchor', 'start')
+      .text('Daily cases');
+    g.append('text')
+      .attr('transform', 'translate(' + (x(230)) + ',' + (y(-350)) + ')rotate(6)')
+      .attr('class', style.legend_text)
+      .attr('text-anchor', 'start')
+      .text('Fully vaccinated');
   }
   // shouldComponentUpdate(nextProps, nextState) {}
   // static getDerivedStateFromProps(props, state) {}

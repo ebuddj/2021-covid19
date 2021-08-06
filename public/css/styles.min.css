@@ -15,13 +15,18 @@
   fill: #f00;
   stroke-width: 0;
 }
+.app___2khK2 .chart_containers___30YKP svg .legend_text___naI0q {
+  font-family: Lato;
+  font-size: 8pt;
+  font-weight: 400;
+}
 .app___2khK2 .chart_containers___30YKP svg .yaxis___2Krk0 path {
   stroke: #ccc;
 }
 .app___2khK2 .chart_containers___30YKP svg .yaxis___2Krk0 text {
   font-family: Lato;
-  font-weight: 300;
   font-size: 7pt;
+  font-weight: 300;
 }
 /* General styles */
 .clearfix___1yHqr {
