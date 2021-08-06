@@ -7,9 +7,10 @@ import * as d3 from 'd3';
 const data_file_name = 'data.json';
 
 const margin = {top: 10, right: 5, bottom: 0, left: 40},
-      width = window.innerWidth/6 - margin.left - margin.right,
+      width = ((window.innerWidth > 500) ? 260 : 400) - margin.left - margin.right,
       height = 200 - margin.top - margin.bottom;
 
+const rotate = (window.innerWidth > 500) ? 6 : 4;
 let x = d3.scaleTime().range([0, width]);
 let y = d3.scaleLinear().range([height / 2, 0]);
 
@@ -171,12 +172,12 @@ class App extends Component {
       .attr('fill', 'none');
 
      g.append('text')
-      .attr('transform', 'translate(' + (x(50)) + ',' + (y(450)) + ')rotate(-6)')
+      .attr('transform', 'translate(' + (x(50)) + ',' + (y(450)) + ')rotate(-' + rotate + ')')
       .attr('class', style.legend_text)
       .attr('text-anchor', 'start')
       .text('Daily cases');
     g.append('text')
-      .attr('transform', 'translate(' + (x(230)) + ',' + (y(-350)) + ')rotate(6)')
+      .attr('transform', 'translate(' + (x(230)) + ',' + (y(-350)) + ')rotate(' + rotate + ')')
       .attr('class', style.legend_text)
       .attr('text-anchor', 'start')
       .text('Fully vaccinated');
